@@ -6,7 +6,7 @@
 /*   By: macuesta <macuesta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:58:08 by macuesta          #+#    #+#             */
-/*   Updated: 2024/11/15 13:28:52 by macuesta         ###   ########.fr       */
+/*   Updated: 2024/11/30 15:11:32 by macuesta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,12 @@ char	*ft_uitoa(unsigned int n)
 {
 	char	*res;
 	int		len_malloc;
-	int		i;
 
 	len_malloc = u_get_power(n);
 	res = (char *)ft_calloc(len_malloc + 1, sizeof(char));
 	if (!res)
 		return (NULL);
-	i = 0;
-	while (len_malloc > i)
+	while (len_malloc)
 	{
 		len_malloc--;
 		res[len_malloc] = n % 10 + '0';
